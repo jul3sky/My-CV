@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="uk" data-lang="ua">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Супровідний лист – Beetroot Academy – Юлія Собко</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2430;--muted:#5b6574;--accent:#1f3a5f;--line:#e1e5ea;--mark:#fff3b0}
+@media (prefers-color-scheme:dark){:root{--bg:#0f141b;--card:#171e28;--text:#e7ebf0;--muted:#9aa5b4;--accent:#8db4e8;--line:#27313e;--mark:#5a4d12}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.7 Georgia,"Times New Roman",serif}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 56px}
+.bar{display:flex;justify-content:flex-end;gap:8px;margin-bottom:12px;font-family:system-ui,sans-serif}
+.bar button{font:inherit;font-size:14px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--text);cursor:pointer}
+.bar button[aria-pressed=true]{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.paper{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:40px 44px}
+.head{border-bottom:2px solid var(--accent);padding-bottom:12px;margin-bottom:24px;font-family:system-ui,sans-serif}
+.head h1{margin:0;font-size:1.6rem;color:var(--accent)}
+.head p{margin:2px 0 0;color:var(--muted);font-size:15px}
+a{color:var(--accent)}
+p{margin:0 0 14px}
+mark{background:var(--mark);color:inherit;padding:0 3px;border-radius:3px}
+.sign{margin-top:24px}
+[data-l]{display:none}
+html[data-lang=ua] [data-l=ua],html[data-lang=en] [data-l=en]{display:block}
+html[data-lang=ua] .head [data-l=ua],html[data-lang=en] .head [data-l=en]{display:block}
+@media print{body{background:#fff;color:#000}.bar{display:none}.paper{border:0;padding:0}}
+@media (max-width:520px){.paper{padding:24px 20px}body{font-size:16px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bar"><button id="ua" aria-pressed="true">UA</button><button id="en" aria-pressed="false">EN</button><button onclick="window.print()">PDF</button></div>
+  <div class="paper">
+    <div class="head">
+      <h1>Юлія Собко</h1>
+      <p>Львів · <a href="mailto:blokhinska@gmail.com">blokhinska@gmail.com</a> · <a href="https://github.com/jul3sky/">github.com/jul3sky</a></p>
+    </div>
+
+    <div data-l="ua">
+      <p>Добрий день, команда Beetroot Academy!</p>
+      <p>Пишу щодо вакансії <mark>[назва позиції]</mark>. Мені близька ваша ідея «Tech-освіти для стійкої України»: ви вимірюєте успіх не прибутком, а тим, як змінюється життя випускників. Саме в такому місці хочу працювати.</p>
+      <p>Мій досвід стосується людей і розмови, що веде до рішення. У Servera я консультувала клієнтів шведською та досягала до 20% допродажів від місячного плану: не тиском, а тим, що слухала, що людині справді потрібно, і розповідала історію продукту. У Humana допомагала клієнтам з інвалідністю планувати день, зберігаючи високі стандарти якості та конфіденційності. Я знаю, як це: допомогти людині зробити непростий вибір і підтримати її на шляху.</p>
+      <p>До IT я теж прийшла через навчання. Самостійно пройшла TryHackMe Cybersecurity 101, курс із Threat Intelligence та Cisco IT Customer Support Basics, тож на власному досвіді знаю, наскільки онлайн-освіта може змінити напрям кар'єри. Вільно володію англійською та шведською, тож легко знайду спільну мову з різними людьми та партнерами.</p>
+      <p>Буду рада розповісти більше на співбесіді й дізнатися, чим можу бути корисною вашій команді. Резюме додаю.</p>
+      <p class="sign">З повагою,<br><strong>Юлія Собко</strong></p>
+    </div>
+
+    <div data-l="en">
+      <p>Dear Beetroot Academy team,</p>
+      <p>I am writing about the <mark>[position title]</mark> role. Your idea of “tech education for a resilient Ukraine” resonates with me: you measure success by your graduates’ outcomes, not by profit. That is exactly the kind of place I want to work.</p>
+      <p>My experience is about people and conversations that lead to a decision. At Servera I advised customers in Swedish and reached up to 20% upsell of the monthly sales plan, not through pressure, but by listening to what people really needed and telling the story behind the product. At Humana I supported clients with disabilities in planning their days while keeping to high standards of quality and confidentiality. I know how it feels to help someone make a difficult choice and to stay with them along the way.</p>
+      <p>I came to IT through learning, too. I completed TryHackMe Cybersecurity 101, a Threat Intelligence course and Cisco IT Customer Support Basics on my own, so I know first-hand how online education can change a career path. I am fluent in English and Swedish and easily find common ground with different people and partners.</p>
+      <p>I would be glad to tell you more in an interview and learn how I can be useful to your team. My CV is attached.</p>
+      <p class="sign">Kind regards,<br><strong>Yulia Sobko</strong></p>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var r=document.documentElement,ua=document.getElementById('ua'),en=document.getElementById('en');
+  function set(l){r.setAttribute('data-lang',l);r.lang=l==='ua'?'uk':'en';ua.setAttribute('aria-pressed',l==='ua');en.setAttribute('aria-pressed',l==='en')}
+  ua.onclick=function(){set('ua')};en.onclick=function(){set('en')};
+})();
+</script>
+</body>
+</html>
